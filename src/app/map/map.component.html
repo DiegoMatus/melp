@@ -1,0 +1,58 @@
+<!-- <input type="text" [(ngModel)]="message" placeholder="your message..."> -->
+<div id="sidebar">
+	<div class="card sticky-top">
+	  <div class="card-header">
+	    <h4>Order by:</h4>
+	  </div>
+	  <div class="card-body">
+	    <a href="#" class="btn btn-info" (click)="orderBy('name')">Name</a>
+	    <a href="#" class="btn btn-info" (click)="orderBy('rating')">Rating</a>
+	  </div>
+	</div>	
+	<div class="card" *ngFor="let place of places_items">
+	  <div class="card-body">
+	    <h5 class="card-title">{{ place.name }}</h5>
+	    <div class="card-text">
+	    	<div class="row">
+		    	<div class="col-md-12">
+		    		<p>{{place.address.street}}, {{place.address.city}}, {{place.address.state}}</p>
+		    	</div>
+	    	</div>
+	    	<div class="row">
+		    	<div class="col-md-1">
+	                <i class="fa fa-globe" aria-hidden="true"></i>
+		    	</div>
+		    	<div class="col-md-5">
+	                <p>{{place.contact.site}}</p>
+		    	</div>
+		    	<div class="col-md-1">
+	                <i class="fa fa-phone" aria-hidden="true"></i>
+		    	</div>
+		    	<div class="col-md-5 clearfix">
+		    		<p>{{place.contact.phone}}</p>
+		    	</div>
+	    	</div>
+	    	<div class="row">
+		    	<div class="col-md-1">
+	                <i class="fa fa-envelope" aria-hidden="true"></i>
+		    	</div>
+		    	<div class="col-md-11">
+		    		<p>{{place.contact.email}}</p>
+		    	</div>
+	    	</div>
+	    	<div class="row">
+		    	<div class="col-md-12">
+	                <i class="fa fa-star" aria-hidden="true" *ngFor="let i of place.rating | getArray"></i>
+		    	</div>
+	    	</div>
+	    </div>
+	    <div class="row">
+	    	<div class="col-md-12">
+	    		<a href="#" class="btn btn-primary" (click)="flyTo(place)">Fly to!</a>
+	    	</div>
+	    </div>
+	  </div>
+	</div>	
+</div>
+
+<div class="map" id="map"></div>

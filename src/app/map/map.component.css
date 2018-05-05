@@ -1,0 +1,40 @@
+p {
+	font-size: 11px;
+}
+
+#map {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	min-height: 94%;
+	z-index: -1;
+}
+
+#sidebar {
+	top: 0;
+	left: 0;
+	overflow-y: scroll;
+	height: 920px;
+}
+
+.card {
+	width: 24em;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: scroll;
+}
+
+.card-text {
+	width: 24em;
+	margin-bottom: 1em;
+}
+
+.marker {
+  background-image: url('mapbox-icon.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
